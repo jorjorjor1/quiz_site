@@ -31,6 +31,7 @@
     {% else %}
         <p class="header__salut">Вы не вошли в систему</p>
         <p><a href="{% url 'login_user' %}" class="header__button">Войти</a><br></p>
+        <br>
         <p><a href="{% url 'signup' %}" class="header__button">Зарегистрироваться</a><br></p>
     {%endif%}
     </header>

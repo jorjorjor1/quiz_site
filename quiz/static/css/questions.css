@@ -130,3 +130,24 @@ header{
   color: cornflowerblue;
   text-align: center;
 }
+.container__helptext{
+  font-size: 16px;
+  font-style: italic;
+  color: cornflowerblue;
+  text-align: left;
+}
+
+
+.container__field label{
+  font-size: 18px;
+  font-family: 'Ledger';
+  text-align: center;
+  font-weight: bold;
+}
+
+.container__field input[type=text],  input[type=password]{
+  width: 40%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
