@@ -1,0 +1,31 @@
+{% extends 'questions/base.html' %}
+
+{% block title %} Список вопросов {% endblock %}
+
+{% block content %}
+<div class='container'>
+    <div class="container__title">Список вопросов</div><br>
+    <div class = 'container__variants-field'>
+        <div class = 'container__list with-score'>
+    {% if user.is_authenticated %}
+        {% for elem in data_sent_to_template %}
+
+            <a href="{{ forloop.counter0 }}">{{elem.1}}</a> <div class = 'container_score'>Выиграно очков: {{elem.2}}</div>
+        
+        {%endfor%}
+    {% else %}
+        {% for elem in data_sent_to_template %}
+        
+        <a href="{{ forloop.counter0 }}" class = 'link1'>{{elem}}</a><br>
+     
+        {%endfor%}
+    {%endif%}
+        </div>
+    </div>
+    <div class = 'container__navigation'>
+        <p><a href="../../quizes" >Главное меню </a></p>
+    </div>
+    
+</div>
+
+{% endblock %}

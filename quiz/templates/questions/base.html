@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+    
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Ledger&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>{% block title %} Victorina {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/questions.css' %}">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+    <script src="{% static 'js/radio_button.js' %}"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <header>
+    {% if user.is_authenticated %}
+        <p class = 'header__salut'> Привет {{ user.username }}!</p>
+        <p ><a href="{% url 'LogoutView' %}" class = 'header__button'>logout</a></p><br>
+    {% else %}
+        <p class="header__salut">Вы не вошли в систему</p>
+        <p><a href="{% url 'login_user' %}" class="header__button">Войти</a><br></p>
+        <p><a href="{% url 'signup' %}" class="header__button">Зарегистрироваться</a><br></p>
+    {%endif%}
+    </header>
+    {% block content %}
+    {% endblock %}
+    
+</body>
+
+</html>
+

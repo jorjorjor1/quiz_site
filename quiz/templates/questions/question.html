@@ -1,0 +1,58 @@
+{% extends 'questions/base.html' %}
+{% load static%}
+{% block title %} Вопрос {% endblock %}
+
+{% block content %}
+<div class='container'>
+    {% if question_setup %}
+    <div class="container__title">{{question_setup}}</div><br>
+    {% else %}
+        Вопросы не найдены
+    {% endif %}
+
+    {% if variant_1 %}
+        <form id = 'main-form' method="POST">
+            {% csrf_token %}
+
+        <div class = 'container__variants-field'>
+            <div class = 'container__variant'>
+                <input name="var" id = '{{variant_1}}' type="radio" value="{{variant_1}}"> 
+                <label for="{{variant_1}}"><span></span>{{variant_1}}</label>
+            </div>
+            
+            <div class = 'container__variant'>
+                <input name="var" id = '{{variant_2}}' type="radio" value="{{variant_2}}"> 
+                <label for="{{variant_2}}"><span></span>{{variant_2}}</label>
+            </div>
+            <div class = 'container__variant'>
+                <input name="var" id = '{{variant_3}}' type="radio" value="{{variant_3}}"> 
+                <label for="{{variant_3}}"><span></span>{{variant_3}}</label>
+            </div>
+            <div class = 'container__submit'><input  type="submit" value="Выбрать" ></div>
+        </div>
+         <div class="container__alert">
+         </div> 
+
+         <div class = 'container__navigation'>
+    {% else %}
+        Есть варианты то?
+    {% endif %}
+    {{results}}
+
+    {% if prev_question_id >= 0%}
+    
+    <p><a href="/{{quiz_id}}/{{prev_question_id}}">Предыдущий вопрос </a></p>
+ {% else %}
+ {% endif %}
+    
+    {% if next_question_id < questions_quant %}
+        <p><a href="/{{quiz_id}}/{{next_question_id}}">Следующий вопрос </a></p>
+            <p><a href="../../quizes" >Главное меню </a></p>
+    {% else %}
+        <p><a href="../../quizes" >Главное меню </a></p>
+    {% endif %}
+</div>
+
+
+    </div>
+{% endblock %}

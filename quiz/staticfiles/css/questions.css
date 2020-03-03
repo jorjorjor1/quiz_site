@@ -1,0 +1,132 @@
+body{
+  background-color: navajowhite;
+}
+
+
+header{
+  text-align: right;
+  margin: 50px 50px;
+}
+
+.header__salut{
+  font-family: 'Ledger';
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.header__button{
+  border: #3898c4 solid;
+  background-color: #3898c4;
+  text-decoration: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Ledger';
+  box-shadow: 2px 2px 2px 2px;
+  padding: 5px 10px;
+
+}
+
+.container{
+  max-width: 1140px;
+  margin: auto;
+}
+
+.container__title{
+  font-size: 30px;
+  font-family: 'Ledger';
+  text-align: center;
+  font-weight: bold;
+}
+.container__variants-field{
+  max-width: 640px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  margin: auto;
+  background-color: #fde5c2;
+  border-radius: 25px;
+}
+.container__variant input[type="radio"] {
+  display:none;
+}
+.container__variant input[type="radio"] + label span{
+  display:inline-block;
+  width:25px;
+  height:25px;
+  margin-top: 10px;
+  background:url(radio-button-off-icon.png);
+  background-size: contain;
+  vertical-align: bottom;
+}
+
+.container__variant input[type="radio"]:checked + label span{
+  background:url(radio-button-on-icon.png) ;
+  background-size: contain;
+}
+.container__submit{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.container__submit input{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  outline: 0;
+}
+.container__alert{
+  font-family: 'Ledger';
+  font-size: 18px;
+}
+
+.container__navigation{
+  display: grid;
+  grid-auto-flow: column;
+  text-align: center;
+  margin-top: 120px;
+}
+
+
+.container__navigation a{  border: #3898c4 solid;
+  background-color: #3898c4;
+  text-decoration: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Ledger';
+  box-shadow: 2px 2px 2px 2px;
+  padding: 5px 10px;
+}
+
+.container__list {
+  display: grid;
+  margin-bottom: 10px;
+
+}
+.container__list a{
+  margin-bottom: 10px;
+  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(212,75,56); /* фон кнопки */
+  padding: .7em 1.5em; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
+  margin-right: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.container__list a:hover { background: rgb(232,95,76); } /* при наведении курсора мышки */
+.container__list a:active { background: rgb(152,15,0); } /* при нажатии */
+
+.container_score{
+  font-size: 16px;
+  font-style: italic;
+  color: cornflowerblue;
+  text-align: center;
+}
