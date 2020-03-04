@@ -2,30 +2,27 @@
 {% load static %}
 {% load staticfiles %}
 {% block content %}
-    <div id="login">
+<div class='container'>
+    <div class = 'container__variants-field'>
         <form class="form-horizontal" name="LoginForm" action="/login/" method="post">
         {% csrf_token %}
         {% if next %}
             <input type="hidden" name="next" value="{{ next }}" />
         {% endif %}
-        <div class="control-group">
-            <label class="control-label" for="username">Username</label>
-            <div class="controls">
+        <div class = 'container__field'>
+            <label class="control-label" for="username">Имя пользователя</label>
+            <br>
                 <input type="text" id="username" name="username"  placeholder="Username">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="password">Password</label>
-            <div class="controls">
+                <br>
+            <label class="control-label" for="password">Пароль</label>
+            <br>
                 <input type="password" name="password" id="password" placeholder="Password">
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn">Login</button>
+                <br>
+                <div class = 'container__submit'><input type="submit" value='Логин'> </div>
             </div>
         </div>
         </form>
     </div>
+</div>
 {% endblock %}
 

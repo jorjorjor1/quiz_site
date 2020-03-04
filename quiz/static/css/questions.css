@@ -1,11 +1,13 @@
 body{
   background-color: navajowhite;
+  margin: 0px;
 }
 
 
 header{
-  text-align: right;
-  margin: 50px 50px;
+  text-align: center;
+  background-color: darkgoldenrod;
+  height: 110px;
 }
 
 .header__salut{
@@ -14,7 +16,7 @@ header{
   font-weight: bold;
 }
 
-.header__button{
+/* .header__button{
   border: #3898c4 solid;
   background-color: #3898c4;
   text-decoration: none;
@@ -25,11 +27,11 @@ header{
   box-shadow: 2px 2px 2px 2px;
   padding: 5px 10px;
 
-}
+} */
 
 .container{
   max-width: 1140px;
-  margin: auto;
+  margin: 70px auto;
 }
 
 .container__title{
@@ -79,6 +81,7 @@ header{
   display: inline-block;
   font-size: 16px;
   outline: 0;
+  cursor: pointer;
 }
 .container__alert{
   font-family: 'Ledger';
@@ -150,4 +153,73 @@ header{
   padding: 6px 10px;
   margin: 8px 0;
   box-sizing: border-box;
+}
+
+header a {
+  text-decoration: none;
+  outline: none;
+  display: block;
+  transition: .3s ease-in-out;
+}
+nav {
+  display: grid;
+  margin: auto;
+  position: relative;
+  top: 25%;
+  max-width: 600px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topmenu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.topmenu > li {
+  width: 25%;
+  float: left;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+.topmenu > li > a {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  color: #404040;
+  padding: 8px 15px;
+}
+.topmenu li a:hover { color: #D5B45B; }
+.submenu-link:after {
+  background-image:url(angle-down-solid.svg);
+  content: "";
+  font-family: "FontAwesome";
+  color: inherit;
+  margin-left: 10px;
+}
+.submenu {
+  background: #273037;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 5;
+  width: 180px;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: .5s ease-in-out;
+}
+.submenu a {
+  color: white;
+  text-align: left;
+  padding: 12px 15px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.submenu li:last-child a { border-bottom: none; }
+.topmenu > li:hover .submenu {
+  opacity: 1;
+  transform: scaleY(1);
 }
